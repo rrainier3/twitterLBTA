@@ -34,6 +34,10 @@ class UserCell: DatasourceCell {
 class HomeDataSource: Datasource {
     let words = ["User1", "User2", "User3"]
     
+    override func cellClasses() -> [DatasourceCell.Type] {
+        return [UserCell.self]
+    }
+    
     override func item(_ indexPath: IndexPath) -> Any? {
         return words[indexPath.item]
     }
