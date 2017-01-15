@@ -96,6 +96,7 @@
 				TargetAttributes = {
 					4FFCB9371E2BE0D8002FC357 = {
 						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = Y4YLH4W88M;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -260,6 +261,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Y4YLH4W88M;
 				INFOPLIST_FILE = twitterLBTA/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.radiusense.twitterLBTA;
@@ -272,6 +274,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Y4YLH4W88M;
 				INFOPLIST_FILE = twitterLBTA/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.radiusense.twitterLBTA;
