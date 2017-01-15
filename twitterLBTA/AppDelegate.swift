@@ -23,8 +23,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //window?.rootViewController = UINavigationController(rootViewController: ViewController())
         
-        let homeController = HomeController(collectionViewLayout: UICollectionViewFlowLayout())
-        window?.rootViewController = UINavigationController(rootViewController: homeController)
+//        let homeController = HomeController(collectionViewLayout: UICollectionViewFlowLayout())
+//        window?.rootViewController = UINavigationController(rootViewController: homeController)
+
+		window?.rootViewController = UINavigationController(rootViewController: HomeDataSourceController())
         
         return true
     }
