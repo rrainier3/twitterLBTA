@@ -8,11 +8,26 @@
 
 import LBTAComponents
 
+let twitterBlue = UIColor(r: 61, g: 167, b: 244)
+
 class UserFooter: DatasourceCell {
+
+    let textLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Show me more"
+        label.font = UIFont(name: "FreightSans Bold", size: 15)
+        label.textColor = twitterBlue
+        
+        return label
+    }()
+    
     override func setupViews() {
         super.setupViews()
         
-        backgroundColor = .green
+        addSubview(textLabel)
+        textLabel.anchor(topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 0, leftConstant: 12, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
+        
+        //backgroundColor = .green
     }
 }
 
@@ -73,11 +88,13 @@ class UserCell: DatasourceCell {
         let textView = UITextView()
         textView.text = "iPhone, iPad, iOS Programming Community. Join us to learn Swift, Objective-C and build iOS apps!  This is a great time to learn new programming languages that are best suited for web and internet development."
         textView.font = UIFont(name: "SF-UI-Display-Regular", size: 14)
+        // if the background is blocking (white) subviews set .clear
+        textView.backgroundColor = .clear
         return textView
     }()
     
     let followButton: UIButton = {
-    	let twitterBlue = UIColor(r: 61, g: 167, b: 244)
+
         let button = UIButton()
         button.layer.cornerRadius = 5
         button.layer.borderColor = twitterBlue.cgColor
