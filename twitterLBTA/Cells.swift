@@ -17,10 +17,21 @@ class UserFooter: DatasourceCell {
 }
 
 class UserHeader: DatasourceCell {
+
+	let textLabel: UILabel = {
+       let label = UILabel()
+       label.text = "WHO TO FOLLOW"
+       label.font = UIFont(name: "FreightSans Bold", size: 16)
+       return label
+    }()
+    
     override func setupViews() {
         super.setupViews()
         
-        backgroundColor = .blue
+        addSubview(textLabel)
+        textLabel.anchor(topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 0, leftConstant: 12, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
+        
+        //backgroundColor = .blue
     }
 }
 
@@ -78,6 +89,8 @@ class UserCell: DatasourceCell {
         button.setImage(#imageLiteral(resourceName: "follow"), for: .normal)
         button.imageView?.contentMode = .scaleAspectFit
         button.imageEdgeInsets = UIEdgeInsets(top: 0, left: -8, bottom: 0, right: 0)
+        // you can also change or adjust
+        // button.titleEdgeInsets = UIEdgeInsets
         return button
     }()
     
@@ -98,7 +111,7 @@ class UserCell: DatasourceCell {
         
         usernameLabel.anchor(nameLabel.bottomAnchor, left: nameLabel.leftAnchor, bottom: nil, right: nameLabel.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 20)
         
-        bioTextView.anchor(usernameLabel.bottomAnchor, left: usernameLabel.leftAnchor, bottom: self.bottomAnchor, right: self.rightAnchor, topConstant: -4, leftConstant: -4, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
+        bioTextView.anchor(usernameLabel.bottomAnchor, left: usernameLabel.leftAnchor, bottom: self.bottomAnchor, right: self.rightAnchor, topConstant: -4, leftConstant: -4, bottomConstant: 0, rightConstant: 8, widthConstant: 0, heightConstant: 0)
         
         followButton.anchor(topAnchor, left: nil, bottom: nil, right: self.rightAnchor, topConstant: 12, leftConstant: 0, bottomConstant: 0, rightConstant: 12, widthConstant: 120, heightConstant: 34)
     }
