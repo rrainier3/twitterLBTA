@@ -45,21 +45,23 @@ class UserCell: DatasourceCell {
         label.text = "ASHLEY BAKER"
         //label.font = UIFont.boldSystemFont(ofSize: 16)
         //label.font = UIFont(name: "FreightSans Bold", size: 16)
-        label.font = UIFont(name: "ProximaNova-Light", size: 16)
+        label.font = UIFont(name: "FreightSans Bold", size: 16)
         return label
     }()
     
     let usernameLabel: UILabel = {
         let label = UILabel()
-        label.text = "@microsoft"
+        label.text = "@letsbuildthatapp"
         //label.font = UIFont.boldSystemFont(ofSize: 14)
-        label.font = UIFont(name: "SF-UI-Display-Regular", size: 12)
+        label.font = UIFont(name: "ProximaNova-Light", size: 12)
+        //label.textColor = UIColor(r: 230, g: 230, b: 230)
         return label
     }()
     
     let bioTextView: UITextView = {
         let textView = UITextView()
-        textView.backgroundColor = .yellow
+        textView.text = "iPhone, iPad, iOS Programming Community. Join us to learn Swift, Objective-C and build iOS apps!  This is a great time to learn new programming languages that are best suited for web and internet development."
+        textView.font = UIFont(name: "SF-UI-Display-Regular", size: 14)
         return textView
     }()
     
@@ -86,7 +88,7 @@ class UserCell: DatasourceCell {
         
         usernameLabel.anchor(nameLabel.bottomAnchor, left: nameLabel.leftAnchor, bottom: nil, right: nameLabel.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 20)
         
-        bioTextView.anchor(usernameLabel.bottomAnchor, left: usernameLabel.leftAnchor, bottom: self.bottomAnchor, right: self.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
+        bioTextView.anchor(usernameLabel.bottomAnchor, left: usernameLabel.leftAnchor, bottom: self.bottomAnchor, right: self.rightAnchor, topConstant: -4, leftConstant: -4, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
         
         followButton.anchor(topAnchor, left: nil, bottom: nil, right: self.rightAnchor, topConstant: 12, leftConstant: 0, bottomConstant: 0, rightConstant: 12, widthConstant: 120, heightConstant: 34)
     }
