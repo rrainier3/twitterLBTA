@@ -1,5 +1,5 @@
 //
-//  HomeController.swift  --- DEPRECATED in favor of HomeDatasourceController
+//  HomeController.swift  --- DEPRECATED in favor of HomeDataSourceController
 //  twitterLBTA
 //
 //  Created by RayRainier on 1/15/17.

@@ -8,7 +8,7 @@
 
 import LBTAComponents
 
-class HomeDatsourceController: DatasourceController {
+class HomeDataSourceController: DatasourceController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
