@@ -54,7 +54,7 @@ class UserCell: DatasourceCell {
         label.text = "@letsbuildthatapp"
         //label.font = UIFont.boldSystemFont(ofSize: 14)
         label.font = UIFont(name: "ProximaNova-Light", size: 12)
-        //label.textColor = UIColor(r: 230, g: 230, b: 230)
+        label.textColor = UIColor(r: 130, g: 130, b: 130)
         return label
     }()
     
@@ -66,8 +66,14 @@ class UserCell: DatasourceCell {
     }()
     
     let followButton: UIButton = {
+    	let twitterBlue = UIColor(r: 61, g: 167, b: 244)
         let button = UIButton()
-        button.backgroundColor = .cyan
+        button.layer.cornerRadius = 5
+        button.layer.borderColor = twitterBlue.cgColor
+        //button.layer.borderColor = UIColor.cyan.cgColor
+        button.layer.borderWidth = 1
+        button.setTitle("Follow", for: .normal)        
+        button.setTitleColor(twitterBlue, for: .normal)
         return button
     }()
     
