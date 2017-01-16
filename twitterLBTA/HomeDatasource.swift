@@ -8,7 +8,7 @@
 
 import LBTAComponents
 
-class HomeDataSource: Datasource {
+class HomeDatasource: Datasource {
     let words = ["User1", "User2", "User3"]
     
     override func headerClasses() -> [DatasourceCell.Type]? {

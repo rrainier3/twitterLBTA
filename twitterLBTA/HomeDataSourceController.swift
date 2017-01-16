@@ -8,19 +8,21 @@
 
 import LBTAComponents
 
-class HomeDataSourceController: DatasourceController {
+class HomeDatsourceController: DatasourceController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let homeDataSource = HomeDataSource()
+        let homeDataSource = HomeDatasource()
         self.datasource = homeDataSource
         
     }
     
+    // setup Header Section
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: view.frame.width, height: 50)
     }
     
+    // setup Footer Section
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
         return CGSize(width: view.frame.width, height: 100)
     }

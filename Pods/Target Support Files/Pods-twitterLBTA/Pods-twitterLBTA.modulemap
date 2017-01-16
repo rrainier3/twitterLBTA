@@ -1,0 +1,6 @@
+framework module Pods_twitterLBTA {
+  umbrella header "Pods-twitterLBTA-umbrella.h"
+
+  export *
+  module * { export * }
+}
