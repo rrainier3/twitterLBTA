@@ -42,7 +42,7 @@ class UserCell: DatasourceCell {
     
     let nameLabel: UILabel = {
         let label = UILabel()
-        label.text = "ASHLEY BAKER"
+        label.text = "Ashley McFadden"
         //label.font = UIFont.boldSystemFont(ofSize: 16)
         //label.font = UIFont(name: "FreightSans Bold", size: 16)
         label.font = UIFont(name: "FreightSans Bold", size: 16)
@@ -72,8 +72,11 @@ class UserCell: DatasourceCell {
         button.layer.borderColor = twitterBlue.cgColor
         //button.layer.borderColor = UIColor.cyan.cgColor
         button.layer.borderWidth = 1
-        button.setTitle("Follow", for: .normal)        
+        button.setTitle("Follow", for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
         button.setTitleColor(twitterBlue, for: .normal)
+        button.setImage(#imageLiteral(resourceName: "follow"), for: .normal)
+        button.imageView?.contentMode = .scaleAspectFit
         return button
     }()
     
