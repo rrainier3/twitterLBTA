@@ -10,7 +10,7 @@
 		29BC884C3DEB0E3DC2271A4E /* Pods_twitterLBTA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7D628A0F51BEBABAA696843 /* Pods_twitterLBTA.framework */; };
 		4F0E2E041E2DC0ED0053220B /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0E2E031E2DC0ED0053220B /* UserCell.swift */; };
 		4F501E3C1E2C22E40068892F /* HomeDataSourceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F501E3B1E2C22E40068892F /* HomeDataSourceController.swift */; };
-		4F68E3A71E2C355300BC2F6A /* Cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F68E3A61E2C355300BC2F6A /* Cells.swift */; };
+		4F68E3A71E2C355300BC2F6A /* UserHeaderFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F68E3A61E2C355300BC2F6A /* UserHeaderFooter.swift */; };
 		4F68E3A91E2C356D00BC2F6A /* HomeDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F68E3A81E2C356D00BC2F6A /* HomeDatasource.swift */; };
 		4F82A5B51E2D643700C6C95A /* SF-UI-Display-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4F5AE0BD1E2D4BE800FDAB18 /* SF-UI-Display-Thin.otf */; };
 		4F82A5B61E2D643B00C6C95A /* SF-UI-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4F5AE0BC1E2D4BB700FDAB18 /* SF-UI-Display-Regular.otf */; };
@@ -32,7 +32,7 @@
 		4F5AE0BD1E2D4BE800FDAB18 /* SF-UI-Display-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Display-Thin.otf"; sourceTree = "<group>"; };
 		4F5AE0BE1E2D504A00FDAB18 /* ProximaNova-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Light.otf"; sourceTree = "<group>"; };
 		4F5AE0BF1E2D513B00FDAB18 /* FreightSans Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FreightSans Bold.ttf"; sourceTree = "<group>"; };
-		4F68E3A61E2C355300BC2F6A /* Cells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cells.swift; sourceTree = "<group>"; };
+		4F68E3A61E2C355300BC2F6A /* UserHeaderFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserHeaderFooter.swift; sourceTree = "<group>"; };
 		4F68E3A81E2C356D00BC2F6A /* HomeDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeDatasource.swift; sourceTree = "<group>"; };
 		4FABA2541E2DAF87009926B2 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4FFCB9381E2BE0D8002FC357 /* twitterLBTA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = twitterLBTA.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,7 +87,7 @@
 		4F68E3A51E2C344900BC2F6A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				4F68E3A61E2C355300BC2F6A /* Cells.swift */,
+				4F68E3A61E2C355300BC2F6A /* UserHeaderFooter.swift */,
 				4F0E2E031E2DC0ED0053220B /* UserCell.swift */,
 			);
 			name = View;
@@ -274,7 +274,7 @@
 				4F68E3A91E2C356D00BC2F6A /* HomeDatasource.swift in Sources */,
 				4F501E3C1E2C22E40068892F /* HomeDataSourceController.swift in Sources */,
 				4FABA2551E2DAF87009926B2 /* User.swift in Sources */,
-				4F68E3A71E2C355300BC2F6A /* Cells.swift in Sources */,
+				4F68E3A71E2C355300BC2F6A /* UserHeaderFooter.swift in Sources */,
 				4FFCB93C1E2BE0D8002FC357 /* AppDelegate.swift in Sources */,
 				4FFCB94E1E2BEC8E002FC357 /* HomeController.swift in Sources */,
 				4F0E2E041E2DC0ED0053220B /* UserCell.swift in Sources */,
