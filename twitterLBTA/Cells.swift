@@ -54,7 +54,14 @@ class UserCell: DatasourceCell {
     
     override var datasourceItem: Any? {
         didSet {
-//            nameLabel.text = datasourceItem as? String
+            
+            guard let user = datasourceItem as? User else {
+                return
+            }
+            nameLabel.text = user.name
+            usernameLabel.text = user.username
+            bioTextView.text = user.bioText
+            
         }
     }
     
