@@ -15,7 +15,9 @@ class HomeDatasource: Datasource {
         
         let janiceUser = User(name: "Janice Duncan", username: "@echonetwork", bioText: "Janice Duncan is a developer that tweets about iPhone and iOS programming techniques and development. She is an avid fan of the Chicago Cubs.", profileImage: #imageLiteral(resourceName: "janice"))
         
-        return [ashleyUser, janiceUser]
+        let smithUser = User(name: "Kelly Smith", username: "@burlington", bioText: "Kelly Smith's recently released course on basic training provides some excellent guidance on how to use UITableView and UICollectionView.  This course also teaches some basics on the Swift language. This is an anthology of the wikipedia website explaining the evolution of the technological study of machine learning.", profileImage: #imageLiteral(resourceName: "smith"))
+        
+        return [ashleyUser, janiceUser, smithUser]
     }()
     
     
