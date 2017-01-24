@@ -63,6 +63,6 @@ class HomeDataSourceController: DatasourceController {
             return .zero		// disables this section from section [0,1]
         }
         
-        return CGSize(width: view.frame.width, height: 50)
+        return CGSize(width: view.frame.width, height: 64)
     }
 }
