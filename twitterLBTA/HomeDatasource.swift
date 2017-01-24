@@ -38,6 +38,10 @@ class HomeDatasource: Datasource {
         return users[indexPath.item]
     }
     
+    override func numberOfSections() -> Int {
+        return 2
+    }
+    
     override func numberOfItems(_ section: Int) -> Int {
         //return words.count
         return users.count

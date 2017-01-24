@@ -3,7 +3,7 @@
 //  twitterLBTA
 //
 //  Created by RayRainier on 1/15/17.
-//  Copyright © 2017 RadiuSense. All rights reserved.		Custom Navigation Bar (Ep 7)
+//  Copyright © 2017 RadiuSense. All rights reserved.		Custom Tweet Cells (Ep 8)
 //
 
 import UIKit

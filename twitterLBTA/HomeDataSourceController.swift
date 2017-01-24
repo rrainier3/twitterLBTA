@@ -12,6 +12,8 @@ class HomeDataSourceController: DatasourceController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        collectionView?.backgroundColor = UIColor(r: 232, g: 236, b: 241)
+        
         setupNavigationBarItems()
         
         let homeDataSource = HomeDatasource()
@@ -44,11 +46,23 @@ class HomeDataSourceController: DatasourceController {
     
     // setup Header Section
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+    
+    	if section == 1 {
+        
+            	return .zero		// disables this section from section [0,1]
+        }
+        
         return CGSize(width: view.frame.width, height: 50)
     }
     
     // setup Footer Section
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+    
+        if section == 1 {
+            
+            return .zero		// disables this section from section [0,1]
+        }
+        
         return CGSize(width: view.frame.width, height: 50)
     }
 }
