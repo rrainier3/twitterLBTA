@@ -28,7 +28,7 @@ extension HomeDataSourceController {
         navigationController?.navigationBar.backgroundColor = .white
         navigationController?.navigationBar.isTranslucent = false
         
-        // dumb down the navbar line
+        // DUMB DOWN THE NAVBAR LINE
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         
@@ -36,6 +36,8 @@ extension HomeDataSourceController {
         navBarSeparatorView.backgroundColor = UIColor(r: 230, g: 230, b: 230)
         view.addSubview(navBarSeparatorView)
         navBarSeparatorView.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0.5)
+        
+        // end of DUMB DOWN THE NAVBAR LINE
     }
     
     private func setupLeftNavItem() {

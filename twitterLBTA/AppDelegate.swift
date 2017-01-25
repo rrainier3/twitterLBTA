@@ -3,8 +3,9 @@
 //  twitterLBTA
 //
 //  Created by RayRainier on 1/15/17.
-//  Copyright © 2017 RadiuSense. All rights reserved.		Custom Tweet Cells (Ep 8)
+//  Copyright © 2017 RadiuSense. All rights reserved.		
 //
+//	Tweets String Formatting Tips And Tricks with NSAttributedString (Ep 9)
 
 import UIKit
 
