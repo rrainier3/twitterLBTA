@@ -6,6 +6,7 @@
 //  Copyright © 2017 RadiuSense. All rights reserved.
 //
 
+import UIKit
 import LBTAComponents
 
 class TweetCell: DatasourceCell {
@@ -47,6 +48,22 @@ class TweetCell: DatasourceCell {
         imageView.clipsToBounds = true
         return imageView
     }()
+    
+ 	let replyButton: UIButton = {
+        
+        let button = UIButton(type: .system)
+        button.setImage(#imageLiteral(resourceName: "reply"), for: .normal)
+        return button
+        
+    }()
+    
+    let retweetButton: UIButton = {
+        
+        let button = UIButton(type: .system)
+        button.setImage(#imageLiteral(resourceName: "retweet"), for: .normal)
+        return button
+        
+    }()
 
     override func setupViews() {
         super.setupViews()
@@ -58,10 +75,15 @@ class TweetCell: DatasourceCell {
         
         addSubview(profileImageView)
         addSubview(messageTextView)
+        addSubview(replyButton)
+        addSubview(retweetButton)
         
         profileImageView.anchor(self.topAnchor, left: self.leftAnchor, bottom: nil, right: nil, topConstant: 12, leftConstant: 12, bottomConstant: 0, rightConstant: 0, widthConstant: 50, heightConstant: 50)
         
         messageTextView.anchor(topAnchor, left: profileImageView.rightAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 4, leftConstant: 4, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
+        
+        // LBTAComponents method call
+        replyButton.anchor(nil, left: messageTextView.leftAnchor, bottom: self.bottomAnchor, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 20, heightConstant: 20)
         
     }
 }
