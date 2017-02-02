@@ -5,7 +5,7 @@
 //  Created by RayRainier on 1/15/17.
 //  Copyright © 2017 RadiuSense. All rights reserved.		
 //
-//	Tweets String Formatting Tips And Tricks with NSAttributedString (Ep 9)
+//	 Twitter - UIStackView Landscape and Device Sizing Support (Ep 10)
 
 import UIKit
 
