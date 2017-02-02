@@ -37,7 +37,7 @@ class TweetCell: DatasourceCell {
 	let messageTextView: UITextView = {
         let tv = UITextView()
         tv.text = "SOME SAMPLE TEXT"
-        //tv.backgroundColor = .yellow
+        tv.backgroundColor = .clear
         return tv
     }()
 
