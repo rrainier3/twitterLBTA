@@ -34,7 +34,10 @@ class HomeDataSourceController: DatasourceController {
     
     let tron = TRON(baseURL: "https://api.letsbuildthatapp.com")
     
-    class Home: JSONDecodable {
+ 	//
+    // This Home::class is no longer required as the code was re-implemented in HomeDatasource class
+    //
+       class Home: JSONDecodable {
     
     	let users: [User]
         
