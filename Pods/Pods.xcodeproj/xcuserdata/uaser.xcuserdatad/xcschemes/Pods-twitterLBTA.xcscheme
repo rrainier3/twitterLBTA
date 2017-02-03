@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0820"
+   LastUpgradeVersion = "0700"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0CEFF7ACC2B705BDDF0E383B547421E5"
+               BlueprintIdentifier = "6759E248C81EBCA57CA24423A1893F58"
                BuildableName = "Pods_twitterLBTA.framework"
                BlueprintName = "Pods-twitterLBTA"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0CEFF7ACC2B705BDDF0E383B547421E5"
+            BlueprintIdentifier = "6759E248C81EBCA57CA24423A1893F58"
             BuildableName = "Pods_twitterLBTA.framework"
             BlueprintName = "Pods-twitterLBTA"
             ReferencedContainer = "container:Pods.xcodeproj">

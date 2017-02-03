@@ -7,6 +7,8 @@
 //
 
 import LBTAComponents
+import TRON
+import SwiftyJSON
 
 class HomeDataSourceController: DatasourceController {
 
@@ -21,8 +23,56 @@ class HomeDataSourceController: DatasourceController {
         
         setupNavigationBarItems()
         
-        let homeDataSource = HomeDatasource()
-        self.datasource = homeDataSource
+//        let homeDataSource = HomeDatasource()
+//        self.datasource = homeDataSource
+
+		fetchHomeFeed()
+        
+    }
+    
+    // Let us setup our JSON request framework
+    
+    let tron = TRON(baseURL: "https://api.letsbuildthatapp.com")
+    
+    class Home: JSONDecodable {
+        required init(json: JSON) throws {
+            print("Now ready to parse json: \n")
+            
+            let array = json["users"].array
+            for userJson in array! {
+                
+                print(userJson["name"].stringValue)
+            }
+            
+        }
+    }
+    
+    class JSONError: JSONDecodable {
+        required init(json: JSON) throws {
+            print("JSON ERROR!")
+        }
+    }
+    
+    
+    fileprivate func fetchHomeFeed() {
+        
+        // start our json fetch
+        
+        let request: APIRequest<Home, JSONError> = tron.request("/twitter/home")
+        
+        request.perform(withSuccess: { (home) in
+            
+            print("Successfully fetched our json objects")
+            
+        }) { (err) in
+        
+            print("Failed to fetch json ...", err)
+        }
+        
+        
+        // normally this is a lot of code, lets use tron instead
+        //URLSession.shared.dataTask(with: <#T##URL#>, completionHandler: <#T##(Data?, URLResponse?, Error?) -> Void#>)
+        
         
     }
         
