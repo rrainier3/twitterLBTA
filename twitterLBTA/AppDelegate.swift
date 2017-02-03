@@ -5,7 +5,7 @@
 //  Created by RayRainier on 1/15/17.
 //  Copyright © 2017 RadiuSense. All rights reserved.		
 //
-//	 Twitter - UIStackView Landscape and Device Sizing Support (Ep 10)
+//	 Twitter - JSON Parsing with TRON and Generics (Ep 11)
 
 import UIKit
 
