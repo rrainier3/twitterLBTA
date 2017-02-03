@@ -33,6 +33,15 @@ class HomeDatasource: Datasource, JSONDecodable {
         }
         self.users = users
 	}
+
+/*
+     replace the line
+     for userJson in array! { ... } by checking first if the users array is not nil and unwrap it safely with a guard let
+     guard let array = json["users"].array else { throw JSONError }
+     for userJson in array { ... } // More safe. Never ever trust the JSON response you get from the internet, even though you're the person who write the web services :)﻿
+     
+*/
+    
 /*
     let users: [User] = {
         let ashleyUser = User(name: "Ashley Drake", username: "@buildthatapp", bioText: "iPhone, iPad, iOS Programming Community. Join us to learn Swift, Objective-C and build iOS apps!  This is a great time to learn new programming languages that are best suited for web and internet development.", profileImage: #imageLiteral(resourceName: "ashley"))
