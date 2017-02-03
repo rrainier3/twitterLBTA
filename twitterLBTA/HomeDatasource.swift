@@ -7,9 +7,33 @@
 //
 
 import LBTAComponents
+import TRON
+import SwiftyJSON
 
-class HomeDatasource: Datasource {
+class HomeDatasource: Datasource, JSONDecodable {
 
+    let users: [User]
+    
+    required init(json: JSON) throws {
+        print("Now ready to parse json: \n")
+        
+        var users = [User]()
+        
+        let array = json["users"].array
+        
+        for userJson in array! {
+            
+            let name = userJson["name"].stringValue
+            let username = userJson["username"].stringValue
+            let bio = userJson["bio"].stringValue
+            
+            let user = User(name: name, username: username, bioText: bio, profileImage: UIImage())
+            
+            users.append(user)
+        }
+        self.users = users
+	}
+/*
     let users: [User] = {
         let ashleyUser = User(name: "Ashley Drake", username: "@buildthatapp", bioText: "iPhone, iPad, iOS Programming Community. Join us to learn Swift, Objective-C and build iOS apps!  This is a great time to learn new programming languages that are best suited for web and internet development.", profileImage: #imageLiteral(resourceName: "ashley"))
         
@@ -19,6 +43,7 @@ class HomeDatasource: Datasource {
         
         return [ashleyUser, janiceUser, smithUser]
     }()
+*/
     
     let tweets: [Tweet] = {
        let ashleyUser = User(name: "Ashley Drake", username: "@buildthatapp", bioText: "iPhone, iPad, iOS Programming Community. Join us to learn Swift, Objective-C and build iOS apps!  This is a great time to learn new programming languages that are best suited for web and internet development.", profileImage: #imageLiteral(resourceName: "ashley"))

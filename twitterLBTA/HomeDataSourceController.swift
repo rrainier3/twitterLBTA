@@ -35,14 +35,28 @@ class HomeDataSourceController: DatasourceController {
     let tron = TRON(baseURL: "https://api.letsbuildthatapp.com")
     
     class Home: JSONDecodable {
+    
+    	let users: [User]
+        
         required init(json: JSON) throws {
             print("Now ready to parse json: \n")
             
+            var users = [User]()
+            
             let array = json["users"].array
+            
             for userJson in array! {
                 
-                print(userJson["name"].stringValue)
+                let name = userJson["name"].stringValue
+                let username = userJson["username"].stringValue
+                let bio = userJson["bio"].stringValue
+                
+                let user = User(name: name, username: username, bioText: bio, profileImage: UIImage())
+
+				users.append(user)
             }
+            
+            self.users = users
             
         }
     }
@@ -58,11 +72,17 @@ class HomeDataSourceController: DatasourceController {
         
         // start our json fetch
         
-        let request: APIRequest<Home, JSONError> = tron.request("/twitter/home")
+        let request: APIRequest<HomeDatasource, JSONError> = tron.request("/twitter/home")
+//        let request: APIRequest<Home, JSONError> = tron.request("/twitter/home")
         
-        request.perform(withSuccess: { (home) in
-            
+        request.perform(withSuccess: { (homeDatasource) in
+//        request.perform(withSuccess: { (home) in
             print("Successfully fetched our json objects")
+            
+            print(homeDatasource.users.count)
+//            print(home.users.count)
+
+			self.datasource = homeDatasource
             
         }) { (err) in
         
