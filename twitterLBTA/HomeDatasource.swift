@@ -27,7 +27,7 @@ class HomeDatasource: Datasource, JSONDecodable {
             let username = userJson["username"].stringValue
             let bio = userJson["bio"].stringValue
             
-            let user = User(name: name, username: username, bioText: bio, profileImage: UIImage())
+            let user = User(name: name, username: username, bioText: bio, profileImage: #imageLiteral(resourceName: "ashley"))
             
             users.append(user)
         }
