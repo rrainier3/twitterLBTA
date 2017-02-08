@@ -29,13 +29,13 @@ class HomeDataSourceController: DatasourceController {
 //		fetchHomeFeed() invoke with completion block!
 
 		// Tracing sequence
-        print(1)
+        //print(1)
         
         
 		Service.sharedInstance.fetchHomeFeed { (homeDatasource) in
         
         	// Tracing sequence
-            print(3)
+            //print(3)
             
             self.datasource = homeDatasource
         }

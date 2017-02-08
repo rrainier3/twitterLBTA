@@ -14,24 +14,44 @@ class HomeDatasource: Datasource, JSONDecodable {
 
     let users: [User]
     
+    let tweets: [Tweet]
+    
     required init(json: JSON) throws {
-        print("Now ready to parse json: \n")
+    
+        //print("Now ready to parse json: \n")
         
         var users = [User]()
         
         let array = json["users"].array
         
         for userJson in array! {
-            
-            let name = userJson["name"].stringValue
-            let username = userJson["username"].stringValue
-            let bio = userJson["bio"].stringValue
-            
-            let user = User(name: name, username: username, bioText: bio, profileImage: #imageLiteral(resourceName: "ashley"))
+ 
+            let user = User(json: userJson)
             
             users.append(user)
         }
+        
+        var tweets = [Tweet]()
+        
+        let tweetJsonArray = json["tweets"].array
+        for tweetJson in tweetJsonArray! {
+        
+            //print(tweetJson)
+            
+            let userJson = tweetJson["user"]
+            
+            let user = User(json: userJson)
+
+            let message = tweetJson["message"].stringValue
+            
+            let tweet = Tweet(user: user, message: message)
+            
+            tweets.append(tweet)
+        }
+        
         self.users = users
+        
+        self.tweets = tweets
 	}
 
 /*
@@ -52,9 +72,8 @@ class HomeDatasource: Datasource, JSONDecodable {
         
         return [ashleyUser, janiceUser, smithUser]
     }()
-*/
-    
-    let tweets: [Tweet] = {
+
+    var tweets: [Tweet] = {
        let ashleyUser = User(name: "Ashley Drake", username: "@buildthatapp", bioText: "iPhone, iPad, iOS Programming Community. Join us to learn Swift, Objective-C and build iOS apps!  This is a great time to learn new programming languages that are best suited for web and internet development.", profileImage: #imageLiteral(resourceName: "ashley"))
        
        let tweet = Tweet(user: ashleyUser, message: "Welcome to this episode 9 of the Twitter Series.  I really hope you guys are enjoying the series so far.  I really really need a long text block to render out so we're going to stop right here.")
@@ -64,7 +83,7 @@ class HomeDatasource: Datasource, JSONDecodable {
        return [tweet, tweet2]
         
     }()
-    
+*/
     override func headerClasses() -> [DatasourceCell.Type]? {
         return [UserHeader.self]
     }
@@ -80,7 +99,7 @@ class HomeDatasource: Datasource, JSONDecodable {
     override func item(_ indexPath: IndexPath) -> Any? {
         //return words[indexPath.item]
         if indexPath.section == 1 {
-            return tweets[indexPath.item]	// return tweets if its the second section!
+            return tweets[indexPath.item]	// return tweets if its the 2nd section!
         }
         return users[indexPath.item]
     }

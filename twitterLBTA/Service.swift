@@ -39,7 +39,7 @@ struct Service {
         }        
         
         // Tracing sequence
-        print(2)
+        //print(2)
     }
     
     class JSONError: JSONDecodable {
