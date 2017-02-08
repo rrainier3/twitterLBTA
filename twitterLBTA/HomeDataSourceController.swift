@@ -66,37 +66,9 @@ class HomeDataSourceController: DatasourceController {
         }
     }
     
-    class JSONError: JSONDecodable {
-        required init(json: JSON) throws {
-            print("JSON ERROR!")
-        }
-    }
     
     
     fileprivate func fetchHomeFeed() {
-        
-        // start our json fetch
-        
-        let request: APIRequest<HomeDatasource, JSONError> = tron.request("/twitter/home")
-//        let request: APIRequest<Home, JSONError> = tron.request("/twitter/home")
-        
-        request.perform(withSuccess: { (homeDatasource) in
-//        request.perform(withSuccess: { (home) in
-            print("Successfully fetched our json objects")
-            
-            print(homeDatasource.users.count)
-//            print(home.users.count)
-
-			self.datasource = homeDatasource
-            
-        }) { (err) in
-        
-            print("Failed to fetch json ...", err)
-        }
-        
-        
-        // normally this is a lot of code, lets use tron instead
-        //URLSession.shared.dataTask(with: <#T##URL#>, completionHandler: <#T##(Data?, URLResponse?, Error?) -> Void#>)
         
         
     }
