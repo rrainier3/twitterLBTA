@@ -18,6 +18,7 @@ struct Service {
     static let sharedInstance = Service()
     
     // our func needs a completion block ()->()
+    
     func fetchHomeFeed(completion: @escaping (HomeDatasource) -> ()) {
         print("Fetching home food!")
         
@@ -31,14 +32,12 @@ struct Service {
             
             completion(homeDatasource)
             
-//            self.datasource = homeDatasource
-            
         }) { (err) in
             
             print("Failed to fetch json ...", err)
         }        
         
-        // Tracing sequence
+        // Tracing asynch sequence
         //print(2)
     }
     

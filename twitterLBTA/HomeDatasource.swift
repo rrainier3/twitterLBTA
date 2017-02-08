@@ -20,7 +20,7 @@ class HomeDatasource: Datasource, JSONDecodable {
     
 		let usersJsonArray = json["users"].array
     	
-        //for-loop replaced by array.map!
+        //for-loops replaced by array.map!
         
         self.users = usersJsonArray!.map{User(json: $0)}
         
