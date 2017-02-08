@@ -17,7 +17,8 @@ struct Service {
     
     static let sharedInstance = Service()
     
-    func fetchHomeFeed() {
+    // our func needs a completion block ()->()
+    func fetchHomeFeed(completion: @escaping (HomeDatasource) -> ()) {
         print("Fetching home food!")
         
         // start our json fetch
@@ -28,7 +29,7 @@ struct Service {
             
             print("Successfully fetched our json objects")
             
-            print(homeDatasource.users.count)
+            completion(homeDatasource)
             
 //            self.datasource = homeDatasource
             

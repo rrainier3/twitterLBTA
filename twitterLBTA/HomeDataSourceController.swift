@@ -26,52 +26,14 @@ class HomeDataSourceController: DatasourceController {
 //        let homeDataSource = HomeDatasource()
 //        self.datasource = homeDataSource
 
-//		fetchHomeFeed()
+//		fetchHomeFeed() invoke with completion block!
 
-		Service.sharedInstance.fetchHomeFeed()
-        
-    }
-    
-    // Let us setup our JSON request framework
-    
-    let tron = TRON(baseURL: "https://api.letsbuildthatapp.com")
-    
- 	//
-    // This Home::class is no longer required as the code was re-implemented in HomeDatasource class
-    //
-       class Home: JSONDecodable {
-    
-    	let users: [User]
-        
-        required init(json: JSON) throws {
-            print("Now ready to parse json: \n")
-            
-            var users = [User]()
-            
-            let array = json["users"].array
-            
-            for userJson in array! {
-                
-                let name = userJson["name"].stringValue
-                let username = userJson["username"].stringValue
-                let bio = userJson["bio"].stringValue
-                
-                let user = User(name: name, username: username, bioText: bio, profileImage: UIImage())
-
-				users.append(user)
-            }
-            
-            self.users = users
-            
+		Service.sharedInstance.fetchHomeFeed { (homeDatasource) in
+            self.datasource = homeDatasource
         }
-    }
-    
-    
-    
-    fileprivate func fetchHomeFeed() {
-        
         
     }
+    
         
     // collapse line spacing to remove gap
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
