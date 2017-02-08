@@ -38,6 +38,8 @@ struct Service {
             print("Failed to fetch json ...", err)
         }        
         
+        // Tracing sequence
+        print(2)
     }
     
     class JSONError: JSONDecodable {

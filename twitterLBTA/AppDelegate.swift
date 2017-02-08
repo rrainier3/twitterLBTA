@@ -5,7 +5,7 @@
 //  Created by RayRainier on 1/15/17.
 //  Copyright © 2017 RadiuSense. All rights reserved.		
 //
-//	 How to Implement Singleton and Completion Blocks (Ep 12)
+//	 Twitter - Parse Tweets JSON using Map (Ep 13)
 
 import UIKit
 
