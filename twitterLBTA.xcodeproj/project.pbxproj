@@ -18,6 +18,7 @@
 		4F82A5B61E2D643B00C6C95A /* SF-UI-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4F5AE0BC1E2D4BB700FDAB18 /* SF-UI-Display-Regular.otf */; };
 		4F82A5B71E2D643E00C6C95A /* ProximaNova-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4F5AE0BE1E2D504A00FDAB18 /* ProximaNova-Light.otf */; };
 		4F82A5B81E2D644100C6C95A /* FreightSans Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4F5AE0BF1E2D513B00FDAB18 /* FreightSans Bold.ttf */; };
+		4F96588C1E4ACA9B00C5B4D5 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F96588B1E4ACA9B00C5B4D5 /* Service.swift */; };
 		4FA586E81E37A3FD007B0E6A /* TweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA586E71E37A3FD007B0E6A /* TweetCell.swift */; };
 		4FABA2551E2DAF87009926B2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FABA2541E2DAF87009926B2 /* User.swift */; };
 		4FFCB93C1E2BE0D8002FC357 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFCB93B1E2BE0D8002FC357 /* AppDelegate.swift */; };
@@ -39,6 +40,7 @@
 		4F5AE0BF1E2D513B00FDAB18 /* FreightSans Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FreightSans Bold.ttf"; sourceTree = "<group>"; };
 		4F68E3A61E2C355300BC2F6A /* UserHeaderFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserHeaderFooter.swift; sourceTree = "<group>"; };
 		4F68E3A81E2C356D00BC2F6A /* HomeDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeDatasource.swift; sourceTree = "<group>"; };
+		4F96588B1E4ACA9B00C5B4D5 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		4FA586E71E37A3FD007B0E6A /* TweetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetCell.swift; sourceTree = "<group>"; };
 		4FABA2541E2DAF87009926B2 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4FFCB9381E2BE0D8002FC357 /* twitterLBTA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = twitterLBTA.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,6 +104,14 @@
 			name = View;
 			sourceTree = "<group>";
 		};
+		4F96588A1E4ACA6E00C5B4D5 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				4F96588B1E4ACA9B00C5B4D5 /* Service.swift */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
 		4FFCB92F1E2BE0D8002FC357 = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				4F5AE0BB1E2D4A9800FDAB18 /* Resources */,
+				4F96588A1E4ACA6E00C5B4D5 /* Service */,
 				4F68E3A51E2C344900BC2F6A /* View */,
 				4F68E3A41E2C344000BC2F6A /* Model */,
 				4F68E3A31E2C343200BC2F6A /* Controller */,
@@ -288,6 +299,7 @@
 				4F68E3A71E2C355300BC2F6A /* UserHeaderFooter.swift in Sources */,
 				4FFCB93C1E2BE0D8002FC357 /* AppDelegate.swift in Sources */,
 				4F3C76BF1E2F176500633DD4 /* HomeDataSourceController+navbar.swift in Sources */,
+				4F96588C1E4ACA9B00C5B4D5 /* Service.swift in Sources */,
 				4FFCB94E1E2BEC8E002FC357 /* HomeController.swift in Sources */,
 				4F0E2E041E2DC0ED0053220B /* UserCell.swift in Sources */,
 			);

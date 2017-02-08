@@ -26,7 +26,9 @@ class HomeDataSourceController: DatasourceController {
 //        let homeDataSource = HomeDatasource()
 //        self.datasource = homeDataSource
 
-		fetchHomeFeed()
+//		fetchHomeFeed()
+
+		Service.sharedInstance.fetchHomeFeed()
         
     }
     
