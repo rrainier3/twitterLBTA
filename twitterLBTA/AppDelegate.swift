@@ -5,7 +5,7 @@
 //  Created by RayRainier on 1/15/17.
 //  Copyright © 2017 RadiuSense. All rights reserved.		
 //
-//	 Twitter - JSON Parsing with TRON and Generics (Ep 11)
+//	 How to Implement Singleton and Completion Blocks (Ep 12)
 
 import UIKit
 
