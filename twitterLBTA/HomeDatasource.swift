@@ -18,40 +18,16 @@ class HomeDatasource: Datasource, JSONDecodable {
     
     required init(json: JSON) throws {
     
-        //print("Now ready to parse json: \n")
+		let usersJsonArray = json["users"].array
+    	
+        //for-loop replaced by array.map!
         
-        var users = [User]()
+        self.users = usersJsonArray!.map{User(json: $0)}
         
-        let array = json["users"].array
+        let tweetsJsonArray = json["tweets"].array
         
-        for userJson in array! {
- 
-            let user = User(json: userJson)
-            
-            users.append(user)
-        }
+        self.tweets = tweetsJsonArray!.map{Tweet(json: $0)}
         
-        var tweets = [Tweet]()
-        
-        let tweetJsonArray = json["tweets"].array
-        for tweetJson in tweetJsonArray! {
-        
-            //print(tweetJson)
-            
-            let userJson = tweetJson["user"]
-            
-            let user = User(json: userJson)
-
-            let message = tweetJson["message"].stringValue
-            
-            let tweet = Tweet(user: user, message: message)
-            
-            tweets.append(tweet)
-        }
-        
-        self.users = users
-        
-        self.tweets = tweets
 	}
 
 /*
@@ -62,28 +38,6 @@ class HomeDatasource: Datasource, JSONDecodable {
      
 */
     
-/*
-    let users: [User] = {
-        let ashleyUser = User(name: "Ashley Drake", username: "@buildthatapp", bioText: "iPhone, iPad, iOS Programming Community. Join us to learn Swift, Objective-C and build iOS apps!  This is a great time to learn new programming languages that are best suited for web and internet development.", profileImage: #imageLiteral(resourceName: "ashley"))
-        
-        let janiceUser = User(name: "Janice Duncan", username: "@echonetwork", bioText: "Janice Duncan is a developer that tweets about iPhone and iOS programming techniques and development. She is an avid fan of the Chicago Cubs.", profileImage: #imageLiteral(resourceName: "janice"))
-        
-        let smithUser = User(name: "Kelly Smith", username: "@burlington", bioText: "Kelly Smith's recently released course on basic training provides some excellent guidance on how to use UITableView and UICollectionView.  This course also teaches some basics on the Swift language. This is an anthology of the wikipedia website explaining the evolution of the technological study of machine learning.", profileImage: #imageLiteral(resourceName: "smith"))
-        
-        return [ashleyUser, janiceUser, smithUser]
-    }()
-
-    var tweets: [Tweet] = {
-       let ashleyUser = User(name: "Ashley Drake", username: "@buildthatapp", bioText: "iPhone, iPad, iOS Programming Community. Join us to learn Swift, Objective-C and build iOS apps!  This is a great time to learn new programming languages that are best suited for web and internet development.", profileImage: #imageLiteral(resourceName: "ashley"))
-       
-       let tweet = Tweet(user: ashleyUser, message: "Welcome to this episode 9 of the Twitter Series.  I really hope you guys are enjoying the series so far.  I really really need a long text block to render out so we're going to stop right here.")
-       
-       let tweet2 = Tweet(user: ashleyUser, message: "This is tweet number 2 of the Twitter Series.  I really hope you guys are enjoying the series so far.  I really really need a long text block to render out so we're going to stop right here.")
-       
-       return [tweet, tweet2]
-        
-    }()
-*/
     override func headerClasses() -> [DatasourceCell.Type]? {
         return [UserHeader.self]
     }
