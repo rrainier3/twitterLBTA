@@ -19,26 +19,29 @@ struct Service {
     
     // our func needs a completion block ()->()
     
-    func fetchHomeFeed(completion: @escaping (HomeDatasource) -> ()) {
-        print("Fetching home food!")
+    func fetchHomeFeed(completion: @escaping (HomeDatasource?, Error?) -> ()) {
         
         // start our json fetch
+        print("Fetch json feed from ../home")
         
         let request: APIRequest<HomeDatasource, JSONError> = tron.request("/twitter/home")
+/*
+		Error tests: /twitter/home1 or /twitter/home_with_error
+*/
         
         request.perform(withSuccess: { (homeDatasource) in
             
+            // Success
+            completion(homeDatasource, nil)
             print("Successfully fetched our json objects")
-            
-            completion(homeDatasource)
             
         }) { (err) in
             
-            print("Failed to fetch json ...", err)
+            // Failed
+            completion(nil, err)
+
         }        
         
-        // Tracing asynch sequence
-        //print(2)
     }
     
     class JSONError: JSONDecodable {

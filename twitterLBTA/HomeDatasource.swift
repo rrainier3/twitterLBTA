@@ -18,15 +18,15 @@ class HomeDatasource: Datasource, JSONDecodable {
     
     required init(json: JSON) throws {
     
-		let usersJsonArray = json["users"].array
-    	
+		guard let usersJsonArray = json["users"].array, let tweetsJsonArray = json["tweets"].array else {
+            throw NSError(domain: "com.RadiuSense", code: 1, userInfo: [NSLocalizedDescriptionKey: "Parsing errors occured in JSON"])
+        }
+
         //for-loops replaced by array.map!
         
-        self.users = usersJsonArray!.map{User(json: $0)}
-        
-        let tweetsJsonArray = json["tweets"].array
-        
-        self.tweets = tweetsJsonArray!.map{Tweet(json: $0)}
+        self.users = usersJsonArray.map{User(json: $0)}
+
+        self.tweets = tweetsJsonArray.map{Tweet(json: $0)}
         
 	}
 
