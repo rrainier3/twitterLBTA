@@ -5,7 +5,7 @@
 //  Created by RayRainier on 1/15/17.
 //  Copyright © 2017 RadiuSense. All rights reserved.		
 //
-//	 Twitter - Handling Network and JSON Errors (Ep 14)
+//	 Twitter - Easy Caching and Loading Images using CachedImageView (Ep 15)
 
 import UIKit
 
