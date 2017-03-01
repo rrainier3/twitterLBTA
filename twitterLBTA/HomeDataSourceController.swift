@@ -70,14 +70,9 @@ class HomeDataSourceController: DatasourceController {
         
             if let user = self.datasource?.item(indexPath) as? User {
                 
-                // lets get an estimation of the height of our cell based on user.bioText
-                let approximateWidthOfBioTextView = view.frame.width - 12 - 50 - 12 - 2
-                let size = CGSize(width: approximateWidthOfBioTextView, height: 1000)
-                let attributes = [NSFontAttributeName: UIFont.systemFont(ofSize: 15)]
+				let estimatedHeight = estimatedHeightForText(user.bioText)
                 
-                let estimatedFrame = NSString(string: user.bioText).boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: attributes, context: nil)
-                
-                return CGSize(width: view.frame.width, height: estimatedFrame.height + 66)
+                return CGSize(width: view.frame.width, height: estimatedHeight + 66)
             }
             
         } else if indexPath.section == 1 {
@@ -90,16 +85,23 @@ class HomeDataSourceController: DatasourceController {
     returning .zero means you revert the object to 0-width:0-height
 */
             
-            let approximateWidthOfBioTextView = view.frame.width - 12 - 50 - 12 - 2
-            let size = CGSize(width: approximateWidthOfBioTextView, height: 1000)
-            let attributes = [NSFontAttributeName: UIFont.systemFont(ofSize: 15)]
+			let estimatedHeight = estimatedHeightForText(tweet.message)
             
-            let estimatedFrame = NSString(string: tweet.message).boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: attributes, context: nil)
-            
-            return CGSize(width: view.frame.width, height: estimatedFrame.height + 74)
+            return CGSize(width: view.frame.width, height: estimatedHeight + 74)
         }
         
         return CGSize(width: view.frame.width, height: 200)
+    }
+    
+    fileprivate func estimatedHeightForText(_ text: String) -> CGFloat {
+        
+        let approximateWidthOfBioTextView = view.frame.width - 12 - 50 - 12 - 2
+        let size = CGSize(width: approximateWidthOfBioTextView, height: 1000)
+        let attributes = [NSFontAttributeName: UIFont.systemFont(ofSize: 15)]
+        
+        let estimatedFrame = NSString(string: text).boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: attributes, context: nil)
+        
+        return estimatedFrame.height
     }
     
     // setup Header Section
