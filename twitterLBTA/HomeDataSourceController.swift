@@ -57,7 +57,6 @@ class HomeDataSourceController: DatasourceController {
         
     }
     
-        
     // collapse line spacing to remove gap
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
@@ -66,18 +65,40 @@ class HomeDataSourceController: DatasourceController {
     // setup for sizeForItemAt
     override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
     
-    	if let user = self.datasource?.item(indexPath) as? User {
+    	// first section of users
+        if indexPath.section == 0 {
         
-            // lets get an estimation of the height of our cell based on user.bioText
+            if let user = self.datasource?.item(indexPath) as? User {
+                
+                // lets get an estimation of the height of our cell based on user.bioText
+                let approximateWidthOfBioTextView = view.frame.width - 12 - 50 - 12 - 2
+                let size = CGSize(width: approximateWidthOfBioTextView, height: 1000)
+                let attributes = [NSFontAttributeName: UIFont.systemFont(ofSize: 15)]
+                
+                let estimatedFrame = NSString(string: user.bioText).boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: attributes, context: nil)
+                
+                return CGSize(width: view.frame.width, height: estimatedFrame.height + 66)
+            }
+            
+        } else if indexPath.section == 1 {
+            // our tweets size estimation here
+            
+            guard let tweet = datasource?.item(indexPath) as? Tweet else {
+                return .zero
+            }
+/*
+    returning .zero means you revert the object to 0-width:0-height
+*/
+            
             let approximateWidthOfBioTextView = view.frame.width - 12 - 50 - 12 - 2
             let size = CGSize(width: approximateWidthOfBioTextView, height: 1000)
             let attributes = [NSFontAttributeName: UIFont.systemFont(ofSize: 15)]
             
-            let estimatedFrame = NSString(string: user.bioText).boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: attributes, context: nil)
+            let estimatedFrame = NSString(string: tweet.message).boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: attributes, context: nil)
             
-            return CGSize(width: view.frame.width, height: estimatedFrame.height + 46)
+            return CGSize(width: view.frame.width, height: estimatedFrame.height + 74)
         }
-    
+        
         return CGSize(width: view.frame.width, height: 200)
     }
     
