@@ -64,26 +64,31 @@ class HomeDataSourceController: DatasourceController {
     
     // setup for sizeForItemAt
     override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    
+
+/*
+     returning .zero means you revert the object to 0-width:0-height
+*/
+        
     	// first section of users
         if indexPath.section == 0 {
         
-            if let user = self.datasource?.item(indexPath) as? User {
-                
-				let estimatedHeight = estimatedHeightForText(user.bioText)
-                
-                return CGSize(width: view.frame.width, height: estimatedHeight + 66)
+        	// our user.biotext size estimation
+        
+        	guard let user = self.datasource?.item(indexPath) as? User else {
+                return .zero
             }
+        
+            let estimatedHeight = estimatedHeightForText(user.bioText)
+            
+            return CGSize(width: view.frame.width, height: estimatedHeight + 66)
             
         } else if indexPath.section == 1 {
-            // our tweets size estimation here
+        
+            // our tweets size estimation
             
             guard let tweet = datasource?.item(indexPath) as? Tweet else {
                 return .zero
             }
-/*
-    returning .zero means you revert the object to 0-width:0-height
-*/
             
 			let estimatedHeight = estimatedHeightForText(tweet.message)
             
