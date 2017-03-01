@@ -19,7 +19,6 @@ class UserCell: DatasourceCell {
             nameLabel.text = user.name
             usernameLabel.text = user.username
             bioTextView.text = user.bioText
-            profileImageView.image = user.profileImage
             
             profileImageView.loadImage(urlString: user.profileImageUrl)
         }
