@@ -5,7 +5,7 @@
 //  Created by RayRainier on 1/15/17.
 //  Copyright © 2017 RadiuSense. All rights reserved.		
 //
-//	 Twitter - Parse Tweets JSON using Map (Ep 13)
+//	 Twitter - Handling Network and JSON Errors (Ep 14)
 
 import UIKit
 
