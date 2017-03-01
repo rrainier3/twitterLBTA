@@ -16,6 +16,9 @@ class TweetCell: DatasourceCell {
             guard let tweet = datasourceItem as? Tweet else {
                 return
             }
+            
+            // grab profileImageView from REST api
+            profileImageView.loadImage(urlString: tweet.user.profileImageUrl)
 
             let attributedText = NSMutableAttributedString(string: tweet.user.name, attributes: [NSFontAttributeName: UIFont.boldSystemFont(ofSize: 16)])
             
@@ -41,8 +44,12 @@ class TweetCell: DatasourceCell {
         return tv
     }()
 
-    let profileImageView: UIImageView = {
-        let imageView = UIImageView()
+    // Now using lbta CachedImageView!
+    //    let profileImageView: UIImageView = {
+    //        let imageView = UIImageView()
+
+		let profileImageView: CachedImageView = {
+		let imageView = CachedImageView()
         imageView.image = UIImage(named: "janice")
         imageView.layer.cornerRadius = 5
         imageView.clipsToBounds = true
