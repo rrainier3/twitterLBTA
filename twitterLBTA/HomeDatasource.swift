@@ -11,8 +11,8 @@ import TRON
 import SwiftyJSON
 
 extension Collection where Iterator.Element == JSON {
-    func decode<T>() -> [T] {
-        return []
+    func decode<T: JSONDecodable>() throws -> [T] {
+        return try map{try T(json: $0)}
     }
 }
 
@@ -34,8 +34,8 @@ class HomeDatasource: Datasource, JSONDecodable {
         
         // approach #2
         // introduce refactoring call decode() extension of Collection
-        self.users = usersJsonArray.decode() 
-        self.tweets = tweetsJsonArray.decode()
+        self.users = try usersJsonArray.decode()
+        self.tweets = try tweetsJsonArray.decode()
         
 	}
 
