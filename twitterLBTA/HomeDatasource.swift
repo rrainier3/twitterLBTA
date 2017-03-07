@@ -10,10 +10,15 @@ import LBTAComponents
 import TRON
 import SwiftyJSON
 
+extension Collection where Iterator.Element == JSON {
+    func decode<T>() -> [T] {
+        return []
+    }
+}
+
 class HomeDatasource: Datasource, JSONDecodable {
 
     let users: [User]
-    
     let tweets: [Tweet]
     
     required init(json: JSON) throws {
@@ -22,11 +27,15 @@ class HomeDatasource: Datasource, JSONDecodable {
             throw NSError(domain: "com.RadiuSense", code: 1, userInfo: [NSLocalizedDescriptionKey: "Parsing errors occured in JSON"])
         }
 
+		// approach #1
         //for-loops replaced by array.map!
+//        self.users = usersJsonArray.map{User(json: $0)}
+//        self.tweets = tweetsJsonArray.map{Tweet(json: $0)}
         
-        self.users = usersJsonArray.map{User(json: $0)}
-
-        self.tweets = tweetsJsonArray.map{Tweet(json: $0)}
+        // approach #2
+        // introduce refactoring call decode() extension of Collection
+        self.users = usersJsonArray.decode() 
+        self.tweets = tweetsJsonArray.decode()
         
 	}
 
@@ -34,7 +43,7 @@ class HomeDatasource: Datasource, JSONDecodable {
      replace the line
      for userJson in array! { ... } by checking first if the users array is not nil and unwrap it safely with a guard let
      guard let array = json["users"].array else { throw JSONError }
-     for userJson in array { ... } // More safe. Never ever trust the JSON response you get from the internet, even though you're the person who write the web services :)﻿
+     for userJson in array { ... } // More safe. Never ever trust the JSON response you get from the internet, even though you're the person who wrote the web services :)﻿
      
 */
     

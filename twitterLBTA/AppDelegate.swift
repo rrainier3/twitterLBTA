@@ -5,7 +5,7 @@
 //  Created by RayRainier on 1/15/17.
 //  Copyright © 2017 RadiuSense. All rights reserved.		
 //
-//	 Twitter - Easy Caching and Loading Images using CachedImageView (Ep 15)
+//	 Twitter - Generics and Array Extension (Ep 16)
 
 import UIKit
 
@@ -21,11 +21,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Ignoring storyboard ...
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
-        
-        //window?.rootViewController = UINavigationController(rootViewController: ViewController())
-        
-//        let homeController = HomeController(collectionViewLayout: UICollectionViewFlowLayout())
-//        window?.rootViewController = UINavigationController(rootViewController: homeController)
 
 		window?.rootViewController = UINavigationController(rootViewController: HomeDataSourceController())
         
